@@ -1,15 +1,16 @@
 :root {
-  --primary_color: #733fc8;
-  --secondary_color: #48556a;
+  --main-font: 'Space Mono';
+  --secondary-font: 'big shoulders display';
+  --font-size: 16px;
+  --padding: 32px;
+  --container: 920px;
+  --anime: 0.5s, ease;
+  /* colors */
   --white: #fff;
   --black: #000;
-  --body-bg: #f3f3f3;
-  --main_font: 'Lexend Deca';
-  --secondary_font: 'Big Shoulders Display';
-  --font-size: 16px;
-  --padding: 20px;
-  --container: 1170px;
-  --anime: 0.5s, ease;
+  --body-bg: #c5e4e7;
+  --primary-color: #00474b;
+  --secondary-color: #26c2ae;
 }
 
 *,
@@ -20,7 +21,7 @@
 
 :active,
 :focus {
-  outline-color: var(--main_color);
+  outline-color: var(--primary-color);
 }
 
 html,
@@ -30,7 +31,7 @@ body {
 }
 
 body {
-  font-family: var(--main_font);
+  font-family: var(--main-font);
   font-size: var(--font-size);
   font-weight: 400;
   font-size: 16px;
@@ -87,24 +88,51 @@ button {
 .wrapper {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100%;
+  border: 10px solid #000;
 }
 
 .wrapper > main {
   flex: 1 1 auto;
+  border: 1px solid #000;
 }
-
-/* .container {
-  margin: 0 auto;
-  max-width: var(--container);
-  padding: 0 var(--padding);
-} */
 
 .container {
   margin: 0 auto;
   width: calc(100% - (var(--padding) * 2));
   max-width: var(--container);
-
+  /* temp-style */
   border: 3px solid orange;
 }
+
+/* header */
+.header > .container {
+  display: flex;
+  justify-content: center;
+}
+
+.logotype {
+  width: 86.6px;
+  height: 53px;
+}
+
+
+
+
+
+
+
+
+.main-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 48px;
+  max-width: 920px;
+  padding: 32px;
+  background-color: var(--white);
+  box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.200735);
+  border-radius: 25px;
+}
+
 
