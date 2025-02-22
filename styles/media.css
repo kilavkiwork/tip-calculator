@@ -1,4 +1,13 @@
-@media (max-width: 1170px) {
+@media (max-width: 768px) {
+  :root {
+    --padding: 0;
+  }
+  .wrapper {
+    justify-content: flex-start;
+  }
+  header > .container {
+    padding: 50px 0 40px ;
+  }
 }
 
 /* mobile first */

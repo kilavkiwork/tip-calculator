@@ -88,14 +88,12 @@ button {
 .wrapper {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   min-height: 100%;
-  border: 10px solid #000;
+  justify-content: center;
 }
 
 .wrapper > main {
-  flex: 1 1 auto;
-  border: 1px solid #000;
+  /* flex: 1 1 auto; */
 }
 
 .container {
@@ -107,24 +105,17 @@ button {
 }
 
 /* header */
-.header > .container {
+header > .container {
   display: flex;
   justify-content: center;
+  padding: 88px ;
 }
-
 .logotype {
-  width: 86.6px;
-  height: 53px;
+  width: 86.65px;
+  height: auto;
 }
-
-
-
-
-
-
-
-
-.main-box {
+/* calculator */
+.calculator > .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 48px;
@@ -136,3 +127,7 @@ button {
 }
 
 
+/* footer */
+.footer {
+  /* align-self: flex-end; */
+}
