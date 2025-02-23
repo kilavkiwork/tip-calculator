@@ -8,8 +8,17 @@
   header > .container {
     padding: 50px 0 40px ;
   }
+  .calculator > .container {
+    grid-template-columns: 1fr;
+    padding: 24px;
+    row-gap: 32px;
+  }
+  .tips-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* mobile first */
-@media (min-width: 768px) {
+@media (min-width: 375px) {
+
 }
