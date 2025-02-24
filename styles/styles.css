@@ -168,6 +168,7 @@ input#custom {
 }
 input#custom {
   display: block;
+  margin-top: 0;
   background-image: none;
 }
 .tips-wrapper [type='radio'],
@@ -193,10 +194,6 @@ input#custom {
   border-radius: 5px;
 }
 label#custom-tip {
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1.5;
-  text-align: right;
   color: #547878;
   background: #f3f9fa;
   border-radius: 5px;
