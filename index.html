@@ -99,7 +99,12 @@
           <div class="container">
             <article class="calculation">
               <div class="bill">
-                <label class="label" for="bill">Bill</label>
+                <label
+                  class="label"
+                  for="bill"
+                >
+                  Bill
+                </label>
                 <div class="input-wrapper">
                   <input
                     type="text"
@@ -108,42 +113,99 @@
                   />
                 </div>
               </div>
-
               <div class="tip">
-                <label for="tip" class="label">Tip</label>
+                <label
+                  for="tip"
+                  class="label"
+                >
+                  Tip
+                </label>
                 <div class="tips-wrapper">
                   <label>
-                    <input type="radio" name="tip" value="5"> 5%
+                    <input
+                      type="radio"
+                      name="tip"
+                      value="5"
+                    />
+                    5%
                   </label>
                   <label>
-                    <input type="radio" name="tip" value="10"> 10%
+                    <input
+                      type="radio"
+                      name="tip"
+                      value="10"
+                    />
+                    10%
                   </label>
                   <label>
-                    <input type="radio" name="tip" value="15"> 15%
+                    <input
+                      type="radio"
+                      name="tip"
+                      value="15"
+                    />
+                    15%
                   </label>
                   <label>
-                    <input type="radio" name="tip" value="25"> 25%
+                    <input
+                      type="radio"
+                      name="tip"
+                      value="25"
+                    />
+                    25%
                   </label>
                   <label>
-                    <input type="radio" name="tip" value="50"> 50%
+                    <input
+                      type="radio"
+                      name="tip"
+                      value="50"
+                    />
+                    50%
                   </label>
                   <label id="custom-tip">
-                    <input type="number" name="custom-tip" id="custom" style="display: none;" />
+                    <input
+                      type="number"
+                      name="custom-tip"
+                      id="custom"
+                      style="display: none"
+                    />
                     <span id="custom-text">Custom</span>
                   </label>
                 </div>
               </div>
               <div class="people">
-                <label for="people" class="label">Number of People</label>
+                <label
+                  for="people"
+                  class="label"
+                >
+                  Number of People
+                </label>
                 <div class="input-wrapper">
-                  <input type="text" value="0" id="people">
+                  <input
+                    type="text"
+                    value="0"
+                    id="people"
+                  />
                 </div>
               </div>
             </article>
             <article class="result">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta ab
-              sequi, ut saepe consectetur quia excepturi esse ea eum inventore
-              id natus atque obcaecati illo quos quae ullam, porro facilis.
+              <div class="result-wrapper">
+                <div class="result-row">
+                  <div class="result-description">
+                    Tip Amount
+                    <p>/ person</p>
+                  </div>
+                  <div class="result-sum">$0</div>
+                </div>
+                <div class="result-row">
+                  <div class="result-description">
+                    Total
+                    <p>/ person</p>
+                  </div>
+                  <div class="result-sum">$0</div>
+                </div>
+              </div>
+              <button class="btn">reset</button>
             </article>
           </div>
         </section>
