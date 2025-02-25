@@ -84,12 +84,17 @@ const people = document.querySelector('#people');
 const totalSum = document.querySelector('#total-sum')
 const perPerson = document.querySelector('#per-person')
 
-let resultTips = bill.value + (bill.value * currentTips / 100)
-let resultPerPerson = resultTips / people.value
-totalSum.textContent = `$${resultTips}`
-perPerson.textContent = `$${resultPerPerson}`
+bill.addEventListener('focus', () => {
+  let resultTips = bill.value + (bill.value * currentTips / 100)
+  let resultPerPerson = resultTips / people.value
+  totalSum.textContent = `$${resultTips}`
+  perPerson.textContent = `$${resultPerPerson}`
 
-console.log(bill.value);
+})
+
+
+
+console.log(bill);
 console.log(people);
 
 
