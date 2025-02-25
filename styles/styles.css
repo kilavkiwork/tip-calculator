@@ -182,6 +182,10 @@ input#custom {
 .tips-wrapper [type='number'] {
   display: none;
 }
+/* label:has(input:checked)  {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+} */
 .tips-wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

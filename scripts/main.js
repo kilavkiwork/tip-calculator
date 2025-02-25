@@ -1,13 +1,4 @@
-const inputs = document.querySelectorAll('fieldset input');
-
-// console.log(inputs);
-
-inputs.forEach((input) =>
-  input.addEventListener('change', (event) => {
-    console.log(event.target.value);
-  })
-);
-
+// custom input
 document.getElementById('custom-tip').addEventListener('click', function () {
   let input = document.getElementById('custom');
   let text = document.getElementById('custom-text');
@@ -16,7 +7,7 @@ document.getElementById('custom-tip').addEventListener('click', function () {
   // Робимо input видимим
   input.style.display = 'inline-block';
   input.focus();
-  
+
   // Прибираємо текст "Custom"
   text.style.display = 'none';
 
@@ -28,3 +19,63 @@ document.getElementById('custom-tip').addEventListener('click', function () {
     }
   });
 });
+
+// tip design
+const checkedColors = {
+  backgroundColor: 'var(--secondary-color)',
+  color: 'var(--primary-color)',
+};
+const uncheckedColors = {
+  backgroundColor: '',
+  color: '',
+};
+
+let currentTips = 0;
+
+const inputs = document.querySelectorAll('input[type="radio"]');
+const customInput = document.querySelector('input[name="custom-tip"]');
+
+inputs.forEach((input) => {
+  if (input.checked) {
+    Object.assign(input.parentElement.style, checkedColors);
+    currentTips = input.value;
+  }
+});
+
+function removeSelect() {
+  inputs.forEach((input) => {
+    input.checked = false;
+    Object.assign(input.parentElement.style, uncheckedColors);
+  });
+
+  if (customInput) {
+    customInput.value = '';
+  }
+}
+
+function selectTip(ev) {
+  if (ev.target.matches('input[type="radio"]')) {
+    removeSelect();
+    ev.target.checked = true;
+    Object.assign(ev.target.parentElement.style, checkedColors);
+    currentTips = ev.target.value;
+  }
+}
+
+function handleCustomInput() {
+  removeSelect();
+  customInput.focus();
+}
+
+function handleCustomBlur() {
+  currentTips = customInput.value.trim() || 0;
+  
+}
+
+document.querySelector('.tips-wrapper').addEventListener('click', (ev) => {
+  selectTip(ev);
+  if (ev.target === customInput) handleCustomInput();
+});
+
+customInput.addEventListener('blur', handleCustomBlur);
+
