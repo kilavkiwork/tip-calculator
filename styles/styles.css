@@ -5,6 +5,7 @@
   --body-bg: #c5e4e7;
   --primary-color: #00474b;
   --secondary-color: #26c2ae;
+  --hover-color: #9fe8df;
   /* font */
   --main-font: 'Space Mono';
   --secondary-font: 'big shoulders display';
@@ -12,7 +13,7 @@
   /* main */
   --padding: 32px;
   --container: 920px;
-  --anime: 0.5s, ease;
+  --anime: 0.5s ease-in-out;
 }
 
 *,
@@ -153,10 +154,12 @@ input#custom {
   text-align: right;
   color: var(--primary-color);
   border-radius: 5px;
-  background: #f3f9fa url(../assets/images/icon-dollar.svg) no-repeat 16px
-    center / 10px 16px;
+  background: 
+    #f3f9fa 
+    url(../assets/images/icon-dollar.svg) no-repeat 16px center / 10px 16px;
   border: none;
-  /* transition: outline var(--anime); */
+  outline: 2px solid #f3f9fa;
+  transition: outline var(--anime);
 }
 .input-wrapper input:focus,
 input#custom {
@@ -165,6 +168,10 @@ input#custom {
 .input-wrapper input#people {
   background-image: url(../assets/images/icon-person.svg);
   background-size: 13px 16px;
+}
+.input-wrapper input:hover,
+label#custom-tip:hover {
+  outline: 2px solid var(--secondary-color);
 }
 input#custom {
   display: block;
@@ -192,11 +199,18 @@ input#custom {
   color: var(--white);
   background: var(--primary-color);
   border-radius: 5px;
+  transition: background var(--anime), color var(--anime);
+}
+.tips-wrapper label:hover {
+  color: var(--primary-color);
+  background: var(--hover-color);
 }
 label#custom-tip {
   color: #547878;
   background: #f3f9fa;
   border-radius: 5px;
+  outline: 2px solid #f3f9fa;
+  transition: outline var(--anime);
 }
 .result {
   display: flex;
@@ -247,8 +261,12 @@ label#custom-tip {
   text-align: center;
   text-transform: uppercase;
   color: var(--primary-color);
-  background: #26c2ae;
+  background: var(--secondary-color);
   border-radius: 5px;
+  transition: background var(--anime);
+}
+.btn:hover {
+  background: var(--hover-color);
 }
 
 /* footer */
