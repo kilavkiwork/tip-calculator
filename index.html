@@ -176,14 +176,15 @@
               <div class="people">
                 <label
                   for="people"
-                  class="label"
+                  class="label red-label"
                 >
                   Number of People
+                  <span class="error">Can’t be zero</span>
                 </label>
                 <div class="input-wrapper">
                   <input
                     type="text"
-                    value="0"
+                    value="1"
                     id="people"
                   />
                 </div>
@@ -196,14 +197,14 @@
                     Tip Amount
                     <p>/ person</p>
                   </div>
-                  <div class="result-sum">$0</div>
+                  <div id="total-sum" class="result-sum">$0</div>
                 </div>
                 <div class="result-row">
                   <div class="result-description">
                     Total
                     <p>/ person</p>
                   </div>
-                  <div class="result-sum">$0</div>
+                  <div id="per-person" class="result-sum">$0</div>
                 </div>
               </div>
               <button class="btn">reset</button>

@@ -69,7 +69,6 @@ function handleCustomInput() {
 
 function handleCustomBlur() {
   currentTips = customInput.value.trim() || 0;
-  
 }
 
 document.querySelector('.tips-wrapper').addEventListener('click', (ev) => {
@@ -78,4 +77,19 @@ document.querySelector('.tips-wrapper').addEventListener('click', (ev) => {
 });
 
 customInput.addEventListener('blur', handleCustomBlur);
+
+// calculation
+const bill = document.querySelector('#bill');
+const people = document.querySelector('#people');
+const totalSum = document.querySelector('#total-sum')
+const perPerson = document.querySelector('#per-person')
+
+let resultTips = bill.value + (bill.value * currentTips / 100)
+let resultPerPerson = resultTips / people.value
+totalSum.textContent = `$${resultTips}`
+perPerson.textContent = `$${resultPerPerson}`
+
+console.log(bill.value);
+console.log(people);
+
 

@@ -135,16 +135,24 @@ header > .container {
   padding: 16px 0 16px 16px;
 }
 .label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-weight: 700;
   font-size: 1rem;
   line-height: 1.5;
   color: #5e7a7d;
   margin-bottom: 12px;
 }
+.error {
+  display: none;
+  color: #e17052;
+}
+
 .input-wrapper input,
 input#custom {
   position: relative;
-  margin-top: 12px;
+  /* margin-top: 12px; */
   width: 100%;
   min-height: 48px;
   padding: 6px 16px 6px 32px;
@@ -154,9 +162,8 @@ input#custom {
   text-align: right;
   color: var(--primary-color);
   border-radius: 5px;
-  background: 
-    #f3f9fa 
-    url(../assets/images/icon-dollar.svg) no-repeat 16px center / 10px 16px;
+  background: #f3f9fa url(../assets/images/icon-dollar.svg) no-repeat 16px
+    center / 10px 16px;
   border: none;
   outline: 2px solid #f3f9fa;
   transition: outline var(--anime);
