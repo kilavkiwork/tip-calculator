@@ -147,6 +147,7 @@ header > .container {
 .error {
   display: none;
   color: #e17052;
+  transition: display var(--anime);
 }
 
 .input-wrapper input,

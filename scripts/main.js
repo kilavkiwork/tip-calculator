@@ -38,7 +38,7 @@ const customInput = document.querySelector('input[name="custom-tip"]');
 inputs.forEach((input) => {
   if (input.checked) {
     Object.assign(input.parentElement.style, checkedColors);
-    currentTips = input.value;
+    currentTips = parseFloat(input.value);
   }
 });
 
@@ -58,7 +58,7 @@ function selectTip(ev) {
     removeSelect();
     ev.target.checked = true;
     Object.assign(ev.target.parentElement.style, checkedColors);
-    currentTips = ev.target.value;
+    currentTips = parseFloat(ev.target.value);
   }
 }
 
@@ -68,7 +68,7 @@ function handleCustomInput() {
 }
 
 function handleCustomBlur() {
-  currentTips = customInput.value.trim() || 0;
+  currentTips = parseFloat(customInput.value.trim()) || 0;
 }
 
 document.querySelector('.tips-wrapper').addEventListener('click', (ev) => {
@@ -81,20 +81,39 @@ customInput.addEventListener('blur', handleCustomBlur);
 // calculation
 const bill = document.querySelector('#bill');
 const people = document.querySelector('#people');
-const totalSum = document.querySelector('#total-sum')
-const perPerson = document.querySelector('#per-person')
+const totalSum = document.querySelector('#total-sum');
+const perPerson = document.querySelector('#per-person');
 
-bill.addEventListener('focus', () => {
-  let resultTips = bill.value + (bill.value * currentTips / 100)
-  let resultPerPerson = resultTips / people.value
-  totalSum.textContent = `$${resultTips}`
-  perPerson.textContent = `$${resultPerPerson}`
+function toNumber(value) {
+  return parseFloat(value.replace('$', ''))
+}
 
-})
+function calculateTipToPerson() {
+
+  
+  let numberBill = toNumber(bill.value)
+  let numberPeople = toNumber(people.value)
+  let tipAmount = (numberBill * (currentTips / 100)) / numberPeople
+  let total = (numberBill / numberPeople) + tipAmount
+  
+  if (numberPeople <= 0) {
+    document.querySelector('.error').style.display = 'block'
+    people.style.outlineColor = '#e17052'
+    return
+  } else {
+    people.removeAttribute(style)
+    people.style.outlineColor = '#e17052'
+  }
+  
+  perPerson.textContent = (tipAmount).toFixed(2)
+  totalSum.textContent = total
+
+}
 
 
+document.querySelector('.calculation').addEventListener('input', calculateTipToPerson)
+document.querySelector('.btn').addEventListener('click', reset())
 
-console.log(bill);
-console.log(people);
 
-
+// скільки чайових з кожного
+// скільки разом з чайовими з кожного
