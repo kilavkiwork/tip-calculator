@@ -16,6 +16,12 @@
   .tips-wrapper {
     grid-template-columns: repeat(2, 1fr);
   }
+  .calculation {
+    padding: 8px 8px 0 8px ;
+  }
+  .result {
+    padding: 24px;
+  }
 }
 
 /* mobile first */
